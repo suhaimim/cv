@@ -12,7 +12,9 @@
 <body class="bg-gray-100 p-4" onload="passwordProtect()">
 
 <div class="bg-gray-100 p-4">
-
+<script>
+    const MyDateUTC = Date.UTC(2025,11,4).toString();
+</script>
     <div class="border-1 shadow-lg shadow-gray-700 rounded-lg">
 
         <!-- top content -->
@@ -312,7 +314,8 @@
 
 <script>
         function passwordProtect() {
-    const correctPassword = "securepassword123"; // In a real application, this would be hashed and fetched from a server
+    //const correctPassword = "securepassword123"; // In a real application, this would be hashed and fetched from a server
+    //const correctPassword = Date.UTC(2025,11,4).toString();
     let enteredPassword = prompt("Enter password to view this page:");
     
     if (enteredPassword === correctPassword) {
