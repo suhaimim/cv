@@ -9,7 +9,7 @@
     <!-- You can also link to a local stylesheet if you have a build process -->
     <!-- <link rel="stylesheet" href="./dist/style.css"> -->
 </head>
-<body class="bg-gray-100 p-4">
+<body class="bg-gray-100 p-4" onload="passwordProtect()">
 
 <div class="bg-gray-100 p-4">
 
@@ -309,5 +309,23 @@
     </div>
 
 </div>
+
+<script>
+        function passwordProtect() {
+    const correctPassword = "securepassword123"; // In a real application, this would be hashed and fetched from a server
+    let enteredPassword = prompt("Enter password to view this page:");
+    
+    if (enteredPassword === correctPassword) {
+    document.getElementById("protectedContent").style.display = "block";
+    } else {
+    alert("Incorrect password!");
+    window.location.href = "block.html"; // Redirect to an unauthorized page
+    }
+    }
+    
+    // Call this function when the page loads or when attempting to access protected content
+    // passwordProtect();
+</script>
+
 </body>
 </html>
